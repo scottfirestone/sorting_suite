@@ -17,6 +17,13 @@ class InsertionSortTest < Minitest::Test
     assert_equal InsertionSort, @sorter.class
   end
 
-#test
+  def test_nil_passed_into_sort
+    assert_nil @sorter.sort(nil)
+  end
+
+#test one value sorted to new array
+  def test_one_unsorted_value_into_new_array
+    assert_equal [0], @sorter.sort([0])
+  end
 
 end
