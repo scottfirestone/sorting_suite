@@ -24,4 +24,12 @@ class MergeSortTest < Minitest::Test
   def test_sort_method_2_value_array
     assert_equal [0, 1], @sorter.sort([1, 0])
   end
+
+  def test_sort_method_3_value_array
+    assert_equal [0, 1, 2], @sorter.sort([1, 2, 0])
+  end
+
+  def test_sort_method_11_value_array
+    assert_equal [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], @sorter.sort([10, 9, 8, 1, 2, 3, 4, 0, 7, 5, 6])
+  end
 end
