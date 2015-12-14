@@ -9,16 +9,16 @@ class InsertionSort
       sorted_array = []
       unsorted_array.each do |element|
         index = 0
-        swap = false
-        while swap == false
+        insert = false
+        while insert == false
           if sorted_array[index] == nil
             sorted_array << element
-            swap = true
+            insert = true
           elsif element > sorted_array[index]
             index +=1
           else
             sorted_array.insert(index, element)
-            swap = true
+            insert = true
           end
         end
       end
