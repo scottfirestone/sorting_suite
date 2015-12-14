@@ -17,6 +17,14 @@ class MergeSortTest < Minitest::Test
     assert_equal MergeSort, @sorter.class
   end
 
+  def test_nil_passed_into_sort
+    assert_equal "I'm sorry Dave, I'm afraid I can't do that.", @sorter.sort(nil)
+  end
+
+  def test_empty_array
+    assert_equal [], @sorter.sort([])
+  end
+  
   def test_sort_method_return_1_value
     assert_equal [0], @sorter.sort([0])
   end

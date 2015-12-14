@@ -18,7 +18,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_nil_passed_into_sort
-    assert_nil @sorter.sort(nil)
+    assert_equal "I'm sorry Dave, I'm afraid I can't do that.", @sorter.sort(nil)
   end
 
 #test one value sorted to new array
@@ -26,4 +26,19 @@ class InsertionSortTest < Minitest::Test
     assert_equal [0], @sorter.sort([0])
   end
 
+  def test_two_unsorted_values_into_new_array
+    assert_equal [0, 1], @sorter.sort([1,0])
+  end
+
+  def test_three_unsorted_values_into_new_array
+    assert_equal [0, 1, 2], @sorter.sort([2, 0, 1])
+  end
+
+  def test_many_unsorted_letter_strings_into_array
+    assert_equal ["A", "B", "C", "X", "Y", "Z"], @sorter.sort(["X", "Z", "A", "C", "B", "Y"])
+  end
+
+  def test_sort_duplicate_letters
+    assert_equal ["A", "A", "B", "C"], @sorter.sort(["C", "A", "B", "A"])
+  end
 end

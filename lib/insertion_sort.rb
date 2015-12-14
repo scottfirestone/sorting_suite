@@ -4,10 +4,9 @@ class InsertionSort
 
   def sort(unsorted_array)
     if unsorted_array == nil
-      puts "I'm sorry Dave, I'm afraid I can't do that."
+      p "I'm sorry Dave, I'm afraid I can't do that."
     else
       sorted_array = []
-      swap = true
       unsorted_array.each do |element|
         index = 0
         swap = false
